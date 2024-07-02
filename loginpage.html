@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="sty.css">
+    <title>
+        login page
+    </title>
+    <script>
+      function validateuser(){
+        var username= document.getElementById("username").value;
+        if(username===""){
+          alert("Username cannot be empty");
+          return false;
+        }
+        return true;
+      } 
+      function validatepassword(){
+        var password= document.getElementById("password").value;
+            if(password.length<8){
+                alert("Password length must be of atleast 8 characters");
+                return false;
+            }
+            return true;
+    }
+      function validateemail(){
+        var Emailid= document.getElementById("Email-id").value;
+        if(Emailid===""){
+          alert("Email id cannot be empty");
+          return false;
+        }
+        else{
+          alert("Succesfully Signed up");
+          return true;
+        }
+      }
+        function handleclick(){
+          if(!validateuser() || !validatepassword()  || !validateemail()){
+            return false;
+          }
+          else{
+            window.open('stonks.html','_blank');
+            return true;
+          }
+        }
+</script> 
+</head>
+<body class="bg3">
+
+    <center>
+      
+   <div class="box">
+    <span style="color:white"><h1></span>STOCK<span style="color:rgb(0, 162, 255)"> MARKET</span></h1> 
+      <div>
+
+        <p class="name">Username</p> 
+
+      <input type="text" class="user" id="username" style="height: 40px;width: 400px;" required>
+      <p class="pass">Password</p>
+      <input type="password" style="height: 40px;width: 400px"; id="password" class="passcode">
+      <p class="character"><span style="color:rgb(246, 100, 100)">* </span>password must have 8 characters</p>
+      <p class="email">Email-id</p>
+      <input type="email" id="Email-id" class="email-id" style="height: 40px;width: 400px;">
+        
+    </div>
+   <button class="signin"  type="button" onclick="handleclick()">Sign In</button>
+
+   </div></center>
+</body>
